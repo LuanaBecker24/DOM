@@ -1,0 +1,54 @@
+body {
+    font-family: 'Libre Baskerville', serif;
+    padding: 20pxç;
+    text-align: center;
+    background-color: cornflowerblue;
+    
+}
+
+#botao-adicionar {
+    margin-left:20px;
+    padding: 7px;
+    background-color: rgb(156, 229, 156);
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4rem;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    width: 7rem;
+    height: 45px;
+
+}
+
+#campo-tarefa {
+    width: 60rem;
+    height: 2rem;
+}
+
+#lista-tarefas {
+    margin-top: 20px;
+    text-align: left;
+
+}
+
+.concluída {
+    text-decoration: line-through;
+    color:  rgb(189, 246, 189);
+
+}
+
+.tarefa {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botao-excluir {
+    margin-left: 1rem;
+    background-color: rgb(189, 246, 189);
+}
