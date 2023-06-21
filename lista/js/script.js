@@ -2,6 +2,19 @@
 let campoTarefa = document.querySelector("#campo-tarefa");
 let botaoAdiconar = document.querySelector("#botao-adicionar");
 let listaTarefas = document.querySelector("#lista-tarefas");
+let botaoToggle = document.getElementById('toggle');
+
+document.body.className = localStorage.getItem('modo') || 'modo-claro';
+
+botaoToggle.addEventListener('click', function() {
+    if(document.body.className === 'modo-claro') {
+        document.body.className ='modo-escuro';
+    }else {
+        document.body.className = 'modo-claro';
+    }
+
+    localStorage.setItem('modo', document.body.className);
+});
 
 //adicionando o Evento de clique no botão Adicionar
 botaoAdiconar.addEventListener("click", adicionarTarefa);
