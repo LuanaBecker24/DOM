@@ -1,8 +1,9 @@
 //Selecionando o Evento
 let campoTarefa = document.querySelector("#campo-tarefa");
-let botaoAdiconar = document.querySelector("#botao-adicionar");
+let botaoAdicionar = document.querySelector("#botao-adicionar");
 let listaTarefas = document.querySelector("#lista-tarefas");
 let botaoToggle = document.getElementById('toggle');
+let listaCompras = document.getElementById('lista-compras');
 
 document.body.className = localStorage.getItem('modo') || 'modo-claro';
 
@@ -17,7 +18,7 @@ botaoToggle.addEventListener('click', function() {
 });
 
 //adicionando o Evento de clique no botão Adicionar
-botaoAdiconar.addEventListener("click", adicionarTarefa);
+botaoAdicionar.addEventListener("click", adicionarTarefa);
 
 //Adicionando tarefa com a tecla anterior
 campoTarefa.addEventListener("keyup", function (enter) {
@@ -35,6 +36,19 @@ function adicionarTarefa() {
 
   //Pegar o valor do campo de texto
   let nomeTarefa = campoTarefa.value;
+
+  let itensSalvos = JSON.parse(localStorage.getItem('itens')) || [];
+
+  itensSalvos.push(nomeTarefa);
+
+  localStorage.setItem('itens', JSON.stringify(itensSalvos));
+
+  function salvarTarefa() {
+    let tarefa = document.getElementById('itens').value;
+    localStorage.setItem('itens', salvarTarefa);
+
+  }
+
   //Criando um elemento li
   let novaTarefa = document.createElement("li");
   //definindo o conteúdo do elemento li
