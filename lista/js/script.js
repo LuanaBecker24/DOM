@@ -3,7 +3,6 @@ let campoTarefa = document.querySelector("#campo-tarefa");
 let botaoAdicionar = document.querySelector("#botao-adicionar");
 let listaTarefas = document.querySelector("#lista-tarefas");
 let botaoToggle = document.getElementById('toggle');
-let listaCompras = document.getElementById('lista-compras');
 
 document.body.className = localStorage.getItem('modo') || 'modo-claro';
 
@@ -33,7 +32,7 @@ function adicionarTarefa() {
     alert("Insira um valor");
     return;
   }
-
+  
   //Pegar o valor do campo de texto
   let nomeTarefa = campoTarefa.value;
 
@@ -43,15 +42,10 @@ function adicionarTarefa() {
 
   localStorage.setItem('itens', JSON.stringify(itensSalvos));
 
-  function salvarTarefa() {
-    let tarefa = document.getElementById('itens').value;
-    localStorage.setItem('itens', salvarTarefa);
-
-  }
-
   //Criando um elemento li
   let novaTarefa = document.createElement("li");
   //definindo o conteúdo do elemento li
+
   novaTarefa.innerText = nomeTarefa;
 
   //adicionar o item da lista ao final da lista
@@ -88,4 +82,5 @@ function adicionarTarefa() {
 
   //Criar classe para o botão
   botaoExcluir.classList = "botao-excluir";
+
 }
